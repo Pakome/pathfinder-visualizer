@@ -12,7 +12,8 @@ export default class PathfindingVisualizer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      grid: []
+      grid: [],
+      mouseIsPressed: false,
     };
   }
 
@@ -21,7 +22,22 @@ export default class PathfindingVisualizer extends Component {
     this.setState({grid});
   }
 
-  animateDijkstra(visitedNodesInOrder) {
+  handleMouseDown(row, col) {
+    const newGrid = getNewGridWithWallToggled(this.state.grid, row, col);
+    this.setState({grid: newGrid, mouseIsPressed: true});
+  }
+
+  handleMouseEnter(row, col) {
+    if (!this.state.mouseIsPressed) return;
+    const newGrid = getNewGridWithWallToggled(this.state.grid, row, col);
+    this.setState({grid: newGrid});  
+  }
+
+  handleMouseUp() {
+    this.setState({mouseIsPressed: false});
+  }
+
+  animateDijkstra(visitedNodesInOrder, getNodesInShortestPathOrder) {
     for (let i = 0; i < visitedNodesInOrder.length; i++) {
       setTimeout(() => {
         const node = visitedNodesInOrder[i];

@@ -13,3 +13,6 @@
   background-color: red;
 }
 
+.node-visited {
+  background-color: blue;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Node from './Node/Node';
 import { dijkstra, getNodesInShortestPathOrder } from '../algorithms/dijkstra';
 
+import { Button } from '../Buttons/Button';
 import './PathfindingVisualizer.css';
 
 const START_NODE_ROW = 10;
@@ -41,8 +42,6 @@ export default class PathfindingVisualizer extends Component {
   }
 
   refreshGrid() {
-    // this.forceUpdate();
-    // this.setState(this.state);
     window.location.reload(false);
   }
 
@@ -85,12 +84,8 @@ export default class PathfindingVisualizer extends Component {
 
     return (
       <>
-        <button onClick={() => this.visualizeDijkstra()}>
-          Visualize Dijkstra's Algorithm
-        </button>
-        <button onClick={() => this.refreshGrid()}>
-          Reset grid
-        </button>
+        <Button onClick={() => this.visualizeDijkstra()}>Visualize Dijkstra's Algorithm</Button>
+        <Button onClick={() => this.refreshGrid()}>Reset grid</Button>
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (

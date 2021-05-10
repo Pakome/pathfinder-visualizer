@@ -6,11 +6,18 @@
 }
 
 .node-start {
-  background-color: green;
+  background-color: rgba(52, 229, 255, 1);
+  background-image: url('../../assets/images/chevron-right-solid.svg');
+  background-repeat: no-repeat;
+  background-position-x: center;
 }
 
 .node-finish {
-  background-color: red;
+  /* background-color: rgba(168, 198, 134, 1); */
+  background-color: rgba(52, 229, 255, 1);
+  background-image: url('../../assets/images/bullseye-solid.svg');
+  background-repeat: no-repeat;
+  background-position-x: center;
 }
 
 .node-visited {

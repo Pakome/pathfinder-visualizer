@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet'
 
-const TITLE = 'Pathfinder'
+const TITLE = 'Path Finder'
 
-export default class PathfindingVisualizer extends Component {
+export default class Metadata extends Component {
   render() {
     return (
       <>

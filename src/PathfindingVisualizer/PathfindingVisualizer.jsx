@@ -5,9 +5,9 @@ import { dijkstra, getNodesInShortestPathOrder } from '../algorithms/dijkstra';
 import { Button } from '../Buttons/Button';
 import './PathfindingVisualizer.css';
 
-const START_NODE_ROW = 10;
+const START_NODE_ROW = 15;
 const START_NODE_COL = 15;
-const FINISH_NODE_ROW = 10;
+const FINISH_NODE_ROW = 15;
 const FINISH_NODE_COL = 35;
 export default class PathfindingVisualizer extends Component {
   
@@ -117,9 +117,9 @@ export default class PathfindingVisualizer extends Component {
 
 const getInitialGrid = () => {
   const grid = [];
-  for (let row = 0; row < 20; row++) {
+  for (let row = 0; row < 35; row++) {
     const currentRow = [];
-    for (let col = 0; col < 50; col++) {
+    for (let col = 0; col < 60; col++) {
       currentRow.push(createNode(col, row));
     }
     grid.push(currentRow);

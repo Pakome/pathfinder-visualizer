@@ -3,6 +3,6 @@ body {
 }
 
 .grid {
-    margin: 2vw;
-    /* margin: auto; */
+    margin-left: 5vw;
+    margin-top: 2vw;
 }

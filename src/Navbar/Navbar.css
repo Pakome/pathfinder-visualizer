@@ -38,6 +38,7 @@
   color: white;
   text-transform: none;
   padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 .nav-links:hover {

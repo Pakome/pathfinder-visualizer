@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Node from './Node/Node';
+import Navbar from '../Navbar/Navbar';
 import { dijkstra, getNodesInShortestPathOrder } from '../Algorithms/PathSolving/Dijkstra';
 import { getRecursiveDivisionMaze } from '../Algorithms/Maze/RecursiveDivision';
 
@@ -7,9 +8,9 @@ import { Button } from '../Buttons/Button';
 import './PathfindingVisualizer.css';
 
 const START_NODE_ROW = 15;
-const START_NODE_COL = 20;
+const START_NODE_COL = 10;
 const FINISH_NODE_ROW = 15;
-const FINISH_NODE_COL = 40;
+const FINISH_NODE_COL = 45;
 export default class PathfindingVisualizer extends Component {
   
   constructor(props) {
@@ -143,6 +144,9 @@ export default class PathfindingVisualizer extends Component {
 
     return (
       <>
+        <Navbar visualizeDijstra={this.visualizeDijkstra.bind(this)}
+          generateMaze={this.generateMaze.bind(this)}
+          clearGrid={this.clearGrid.bind(this)}></Navbar>
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (
@@ -167,9 +171,6 @@ export default class PathfindingVisualizer extends Component {
             );
           })}
         </div>
-        <Button onClick={() => this.visualizeDijkstra()}>Visualize Dijkstra's Algorithm</Button>
-        <Button onClick={() => this.refreshGrid()}>Reset grid</Button>
-        <Button onClick={() => this.generateMaze()}>Generate maze</Button>
       </>
     )
   }

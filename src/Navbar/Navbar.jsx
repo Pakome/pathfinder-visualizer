@@ -1,13 +1,38 @@
 import React, { Component } from 'react';
-import { MenuItems } from './MenuItems';
-// import { Button } from '../Buttons/Button';
+import { Button } from '../Buttons/Button';
 import './Navbar.css';
 
 export default class Navbar extends Component {
   state = { clicked: false }
 
-  handleClick = () => {
-    this.setState({clicked: !this.state.clicked});
+  clearGrid() {
+    this.props.clearGrid();
+    this.setState({
+      algorithm: "Visualize Algorithm",
+      maze: "Generate Maze",
+      pathState: false,
+      mazeState: false,
+    });
+  }
+
+  generateMaze() {
+    this.props.generateMaze();
+    this.setState({
+      algorithm: "Visualize Algorithm",
+      maze: "Generate Maze",
+      pathState: false,
+      mazeState: false,
+    });
+  }
+
+  visualizeDijkstra() {
+    this.props.visualizeDijkstra();
+    this.setState({
+      algorithm: "Visualize Algorithm",
+      maze: "Generate Maze",
+      pathState: false,
+      mazeState: false,
+    });
   }
 
   render() {
@@ -18,15 +43,13 @@ export default class Navbar extends Component {
           <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
         </div>
         <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-          {MenuItems.map((item, index) => {
-            return (
-              <li key={index}>
-                <a className={item.cName} href={item.url}>
-                  {item.title}
-                </a>
-              </li>
-            )
-          })}
+          <li>
+            <Button onClick={() => this.visualizeDijkstra()}>Visualize</Button>
+            {/* // eslint-disable-next-line */}
+            <a className="nav-links" onClick={() => this.generateMaze()}>Generate maze</a>
+            {/* // eslint-disable-next-line */}
+            <a className="nav-links" onClick={() => this.clearGrid()}>Reset grid</a>
+          </li>
         </ul>
       </nav>
     )

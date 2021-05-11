@@ -4,7 +4,6 @@ import Navbar from '../Navbar/Navbar';
 import { dijkstra, getNodesInShortestPathOrder } from '../Algorithms/PathSolving/Dijkstra';
 import { getRecursiveDivisionMaze } from '../Algorithms/Maze/RecursiveDivision';
 
-import { Button } from '../Buttons/Button';
 import './PathfindingVisualizer.css';
 
 const START_NODE_ROW = 15;
@@ -144,9 +143,11 @@ export default class PathfindingVisualizer extends Component {
 
     return (
       <>
-        <Navbar visualizeDijstra={this.visualizeDijkstra.bind(this)}
+        <Navbar 
+          visualizeDijkstra={this.visualizeDijkstra.bind(this)}
           generateMaze={this.generateMaze.bind(this)}
-          clearGrid={this.clearGrid.bind(this)}></Navbar>
+          clearGrid={this.clearGrid.bind(this)}
+        />
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (
@@ -171,6 +172,9 @@ export default class PathfindingVisualizer extends Component {
             );
           })}
         </div>
+        {/* <Button onClick={() => this.visualizeDijkstra()}>Visualize Dijkstra's Algorithm</Button>
+        <Button onClick={() => this.clearGrid()}>Reset grid</Button>
+        <Button onClick={() => this.generateMaze()}>Generate maze</Button> */}
       </>
     )
   }

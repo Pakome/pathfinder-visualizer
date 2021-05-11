@@ -62,7 +62,7 @@ export default class PathfindingVisualizer extends Component {
         }
       }
     }
-    const newGrid = getInitialGrid(this.state.numRows, this.state.numColumns);
+    const newGrid = getInitialGrid();
     this.setState({
       grid: newGrid,
       visualizingAlgorithm: false,

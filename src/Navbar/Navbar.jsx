@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { MenuItems } from './MenuItems';
-import { Button } from '../Buttons/Button';
+// import { Button } from '../Buttons/Button';
 import './Navbar.css';
 
 export default class Navbar extends Component {

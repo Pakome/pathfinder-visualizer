@@ -45,10 +45,12 @@ export default class Navbar extends Component {
         <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
           <li>
             <Button onClick={() => this.visualizeDijkstra()}>Visualize</Button>
-            {/* // eslint-disable-next-line */}
-            <a className="nav-links" onClick={() => this.generateMaze()}>Generate maze</a>
-            {/* // eslint-disable-next-line */}
-            <a className="nav-links" onClick={() => this.clearGrid()}>Reset grid</a>
+            {
+              // eslint-disable-next-line jsx-a11y/anchor-is-valid
+            } <a className="nav-links" onClick={() => this.generateMaze()}>Generate maze</a>
+            {
+              // eslint-disable-next-line jsx-a11y/anchor-is-valid
+            } <a className="nav-links" onClick={() => this.clearGrid()}>Reset grid</a>
           </li>
         </ul>
       </nav>

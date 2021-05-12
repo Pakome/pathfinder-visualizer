@@ -27,6 +27,8 @@ Principal features :
 
 The goal of the app is to provide an easy way to visualize the process of the algorithm.
 
+https://user-images.githubusercontent.com/36198537/117899024-918ae600-b2c6-11eb-95f4-ed23d8445a17.mov
+
 ## TODO
 
 ### Next steps

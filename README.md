@@ -1,5 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/50bcecff-9cf2-4c5f-a5b4-7b0c492d7cb2/deploy-status)](https://app.netlify.com/sites/algo-pathfinding-visualizer/deploys)
-
+  
+https://pathfinding-visualizer.maximelardier.dev/
+  
 <h1 align="center">Pathfinder Visualizer</h1>  <br>
 <p align="center">
     <a href="#">
